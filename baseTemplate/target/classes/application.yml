@@ -1,4 +1,4 @@
-# Server configuration
+# Server port
 server:
   port: 8099
 
@@ -11,7 +11,7 @@ spring:
       primary: master
       datasource:
         master:
-          url: jdbc:mysql://localhost:3306/email_send?useUnicode=true&useSSL=false&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&allowMultiQueries=true
+          url: jdbc:mysql://localhost:3306/database_name?useUnicode=true&useSSL=false&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&allowMultiQueries=true
           username: root
           password: 123456
           driver-class-name: com.mysql.cj.jdbc.Driver
@@ -36,5 +36,5 @@ pagehelper:
 
 # JWT配置
 jwt:
-  secret: FOjWaW4ACQUNyI3VjkuNWuPIMQ9XNrNq0YxHbYyPams=
-  expiration: 3600  # 12个月(365天)的毫秒数
+  secret: FOjWaW4ACQUNyI3VjkuNWuPIMQ9XNrNq0YxHbYyPama=
+  expiration: 36000  # token毫秒数
