@@ -1,0 +1,40 @@
+# Server port
+server:
+  port: 8099
+
+# Spring configuration
+spring:
+  application:
+    name: baseTemplate  # 项目名称
+  datasource:
+    dynamic:
+      primary: master
+      datasource:
+        master:
+          url: jdbc:mysql://localhost:3306/database_name?useUnicode=true&useSSL=false&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&allowMultiQueries=true
+          username: root
+          password: 123456
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          type: com.alibaba.druid.pool.DruidDataSource
+          druid:
+            initial-size: 5
+            min-idle: 5
+            max-active: 1000
+
+############### Mybatis plus 配置 ##########################
+mybatis-plus:
+  mapper-locations: classpath*:/mappings/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+
+# pagehelper分页插件
+pagehelper:
+  support-methods-arguments: true
+  reasonable: true
+  params: count=countSql
+
+# JWT配置
+jwt:
+  secret: FOjWaW4ACQUNyI3VjkuNWuPIMQ9XNrNq0YxHbYyPama=
+  expiration: 36000  # token毫秒数
